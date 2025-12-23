@@ -95,7 +95,17 @@ def preprocess_data(data, target_column, save_pipeline_path, output_path):
     return processed_df
 
 if __name__ == "__main__":
-    df = pd.read_csv("obesity_raw/Obesity Classification.csv")
+    DATA_PATH = os.getenv(
+        "DATASET_PATH",
+        "obesity_raw/Obesity Classification.csv"
+    )
+
+    if not os.path.exists(DATA_PATH):
+        raise FileNotFoundError(
+            f"Dataset tidak ditemukan di path: {DATA_PATH}"
+        )
+
+    df = pd.read_csv(DATA_PATH)
 
     preprocess_data(
         data=df,
