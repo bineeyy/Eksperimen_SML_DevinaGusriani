@@ -95,7 +95,7 @@ def preprocess_data(data, target_column, save_pipeline_path, output_path):
     return processed_df
 
 if __name__ == "__main__":
-    df = pd.read_csv(r"C:\Users\Devina\Documents\SEMESTER 5\Eksperimen_SML_Devina\obesity_raw\Obesity Classification.csv")
+    df = pd.read_csv("obesity_raw/Obesity Classification.csv")
 
     preprocess_data(
         data=df,
