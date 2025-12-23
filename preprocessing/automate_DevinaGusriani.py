@@ -6,6 +6,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from joblib import dump
 
+# trigger github actions
 def preprocess_data(data, target_column, save_pipeline_path, output_path):
     # =====================
     # DROP KOLOM TIDAK RELEVAN
